@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd /opt/homebrew/lib/node_modules/@anthropic-ai/; ls; ls -la claude-code/bin; ls claude-code/node_modules/@anthropic-ai 2>/dev/null)",
+      "Read(//opt/homebrew/lib/node_modules/@anthropic-ai/**)",
+      "Bash(git ls-remote *)",
+      "Bash(git init *)",
+      "Bash(git remote *)",
+      "Bash(mkdir -p scripts data/raw src/data src/lib src/components)",
+      "Bash(touch data/raw/.gitkeep)",
+      "Bash(npx --no-install tsc -v)"
+    ]
+  }
+}
