@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+language: ko-KR
+
+reviews:
+  profile: chill
+  request_changes_workflow: false
+  high_level_summary: true
+  poem: false
+  review_status: true
+  collapse_walkthrough: false
+
+  # 기본 브랜치(main) 대상 PR만 자동 리뷰, Draft PR은 제외
+  auto_review:
+    enabled: true
+    drafts: false
+
+  # 리뷰에서 제외할 파일
+  path_filters:
+    - '!package-lock.json'
+    - '!dist/**'
+    - '!data/raw/**'
+    - '!src/data/*.json'
+
+  path_instructions:
+    - path: 'src/lib/**/*.ts'
+      instructions: |
+        탄소 배출·비용 시뮬레이션 계산 로직입니다.
+        단위(kg, km, 원 등) 변환 실수, 0으로 나누기, 부동소수점 오차,
+        가정값(assumptions) 누락 처리를 중점적으로 확인해 주세요.
+    - path: 'src/components/**/*.tsx'
+      instructions: |
+        React 컴포넌트입니다. Hook 사용 규칙, useEffect 의존성 배열,
+        불필요한 리렌더링, props 타입 정의를 확인해 주세요.
+    - path: 'scripts/**'
+      instructions: |
+        데이터 전처리 스크립트입니다. API 인증키가 코드에 하드코딩되지 않았는지
+        (scripts/.env에서 읽어야 함) 반드시 확인해 주세요.
+    - path: '**/*.test.ts'
+      instructions: |
+        Vitest 테스트입니다. 경계값과 예외 케이스가 충분히 다뤄지는지 확인해 주세요.
+
+  tools:
+    eslint:
+      enabled: true
+
+chat:
+  auto_reply: true
