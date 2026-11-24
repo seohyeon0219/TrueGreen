@@ -8,9 +8,9 @@
     ],
     "unit": "비율",
     "adjustable": true,
-    "source": "TCRP Report 95 9장",
+    "source": "TCRP Report 95, Chapter 9, Overview and Summary. https://www.trb.org/publications/tcrp/tcrp_rpt_95c9.pdf",
     "status": "원문 확인",
-    "note": "해외 자료. 정규 노선 배차 추가에 대한 국내 자료 없음"
+    "note": "해외 배차 개선 문헌에서 새 이용자 2~3명당 1명이 승용차를 직접 운전했을 것으로 설명한다. 배열은 참고 범위이고 단일 시작값은 미선정이다. 701번 승차 증가에는 타 노선에서 옮겨온 이용도 포함될 수 있다. 운전자 전환 통행을 회피 차량 통행으로 환산할 때는 재차인원으로 다시 나누지 않는다."
   },
   "headwayElasticity": {
     "key": "headwayElasticity",
@@ -44,12 +44,12 @@
   "elasticityMethod": {
     "key": "elasticityMethod",
     "label": "승객 증가율 계산 방식",
-    "value": null,
+    "value": "midpoint",
     "unit": "-",
     "adjustable": false,
-    "source": "-",
-    "status": "미확인",
-    "note": "TBD(태동): approx(변화율 × 탄력성) 또는 midpoint(중간점식). 15→10분이면 +15.3% / +20.3%"
+    "source": "TCRP Report 95, Chapter 9, Table 9-2, Arc (Mid-point) Elasticity. https://www.trb.org/publications/tcrp/tcrp_rpt_95c9.pdf",
+    "status": "가정",
+    "note": "표 9-2 계수를 같은 중간점 정의로 적용하는 워크스페이스 제안. 기존·변경 배차를 H0·H1, 탄력성을 e라고 하면 k=e×(H1−H0)/(H1+H0), 기존 대비 승차 증가율은 2k/(1−k). 배차는 양수이고 |k|<1인 경우에 적용한다."
   },
   "carOccupancy": {
     "key": "carOccupancy",
@@ -69,7 +69,7 @@
     "adjustable": true,
     "source": "route.json avgTripM (승객 평균 승차거리, 현승 실측 계산)",
     "status": "가정",
-    "note": "기본값은 route.json의 avgTripM. 버스 승차거리를 승용차 주행거리로 쓰는 것은 우리 가정"
+    "note": "시나리오에서 덮어쓰지 않으면 route.avgTripM[dayType]을 참조한다. 현승의 2026년 6월 첨부본은 평일 3544 m, 휴일 3600 m이며 마지막 구간의 재차 결측은 분자에서 빠졌다. 승용차 이동거리를 버스 승차거리로 대신하는 것은 팀 가정이다."
   },
   "carSpeedKmh": {
     "key": "carSpeedKmh",
