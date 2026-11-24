@@ -1,0 +1,156 @@
+{
+  "meta": {
+    "routeNo": "701",
+    "operator": "인천교통공사",
+    "isDummy": true,
+    "sources": {
+      "stops": "인천광역시_버스노선별 정류장 현황 (2026-06-30)",
+      "coords": "인천광역시_시내버스 정류소 현황 (2026-02-28)",
+      "headway": "인천시 시내버스 노선현황 (2026-08-31)",
+      "hourly": "더미값 — 인천광역시_대중교통 통계 조회 서비스 API 수집 후 교체"
+    },
+    "sampleDates": {
+      "weekday": [],
+      "holiday": []
+    }
+  },
+  "headwayMin": {
+    "weekday": 15,
+    "holiday": null
+  },
+  "vehicleFuel": null,
+  "stops": [
+    {
+      "seq": 1,
+      "stopId": "DUMMY-001",
+      "stopNo": "00001",
+      "name": "(예시) 정류장 1",
+      "lat": 0,
+      "lng": 0,
+      "dailyOnOffAllRoutes": null
+    },
+    {
+      "seq": 2,
+      "stopId": "DUMMY-002",
+      "stopNo": "00002",
+      "name": "(예시) 정류장 2",
+      "lat": 0,
+      "lng": 0,
+      "dailyOnOffAllRoutes": null
+    },
+    {
+      "seq": 3,
+      "stopId": "DUMMY-003",
+      "stopNo": "00003",
+      "name": "(예시) 정류장 3",
+      "lat": 0,
+      "lng": 0,
+      "dailyOnOffAllRoutes": null
+    }
+  ],
+  "segments": [
+    {
+      "idx": 0,
+      "fromSeq": 1,
+      "toSeq": 2,
+      "distanceM": 600
+    },
+    {
+      "idx": 1,
+      "fromSeq": 2,
+      "toSeq": 3,
+      "distanceM": 800
+    }
+  ],
+  "scopes": [
+    {
+      "id": "all",
+      "label": "노선 전체",
+      "segmentIdx": [
+        0,
+        1
+      ],
+      "turnaroundM": 0
+    },
+    {
+      "id": "cheongna-core",
+      "label": "청라 중심부",
+      "segmentIdx": [
+        1
+      ],
+      "turnaroundM": null
+    }
+  ],
+  "hourlySegments": [
+    {
+      "dayType": "weekday",
+      "hour": 8,
+      "segmentIdx": 0,
+      "onboard": 120,
+      "trips": 4,
+      "runTimeSec": 90,
+      "avgLoad": 30.0,
+      "speedKmh": 24.0
+    },
+    {
+      "dayType": "weekday",
+      "hour": 8,
+      "segmentIdx": 1,
+      "onboard": 160,
+      "trips": 4,
+      "runTimeSec": 120,
+      "avgLoad": 40.0,
+      "speedKmh": 24.0
+    },
+    {
+      "dayType": "weekday",
+      "hour": 9,
+      "segmentIdx": 0,
+      "onboard": 80,
+      "trips": 4,
+      "runTimeSec": 85,
+      "avgLoad": 20.0,
+      "speedKmh": 25.4
+    },
+    {
+      "dayType": "weekday",
+      "hour": 9,
+      "segmentIdx": 1,
+      "onboard": 100,
+      "trips": 4,
+      "runTimeSec": 110,
+      "avgLoad": 25.0,
+      "speedKmh": 26.2
+    }
+  ],
+  "hourlyBoardings": [
+    {
+      "dayType": "weekday",
+      "hour": 8,
+      "stopSeq": 1,
+      "boardings": 70
+    },
+    {
+      "dayType": "weekday",
+      "hour": 8,
+      "stopSeq": 2,
+      "boardings": 60
+    },
+    {
+      "dayType": "weekday",
+      "hour": 9,
+      "stopSeq": 1,
+      "boardings": 45
+    },
+    {
+      "dayType": "weekday",
+      "hour": 9,
+      "stopSeq": 2,
+      "boardings": 35
+    }
+  ],
+  "avgTripM": {
+    "weekday": 1562,
+    "holiday": null
+  }
+}
