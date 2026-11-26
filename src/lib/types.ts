@@ -48,6 +48,18 @@ export type RouteData = {
   // = Σ(구간 재차승객수 × 구간거리) ÷ Σ(승차 건수), 같은 dayType의 하루 전체 기준
   // assumptions.json의 carTripM(대체되는 승용차 주행거리) 기본값으로 사용
   avgTripM: Record<DayType, number | null>;
+
+  // [실측값] 정류장별 회차 거리 (m), 현승 측정 — 카카오맵 자동차 길찾기
+  // 구간만 추가 운행할 때 구간 끝 정류장에서 반대 방향 정류장까지 돌아가는 거리
+  turnarounds: Turnaround[];
+};
+
+export type Turnaround = {
+  stopName: string;
+  upStopSeq: number;            // 상행 정류장 seq (stops와 연결)
+  downStopSeq: number;          // 하행 정류장 seq
+  upToDownM: number;            // 상행 정류장 → 유턴 → 하행 정류장
+  downToUpM: number;            // 하행 정류장 → 유턴 → 상행 정류장
 };
 
 export type Stop = {
